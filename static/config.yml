@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: pieh/gatsby-first-look # Path to your Github repository
+  branch: master # Branch to update (master by default)
+
+media_folder: "static/img"
+
+collections: # A list of collections the CMS should be able to edit
+  - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Post" # Used in the UI, ie.: "New Post"
+    folder: "content" # The path to the folder where the documents are stored
+    sort: "date:desc" # Default is title:asc
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}"
+    fields: # The fields each document in this collection have
+      - {label: Title, name: "title", widget: "string", tagname: "h1"}
+      - {label: Date, name: "date", widget: "string", default: "27/08/2017"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Test", name: "test", widget: "string", default: "{{slug}}"}
+    meta: # Meta data fields. Just like fields, but without any preview element
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
+    type: 'folder_based_collection'

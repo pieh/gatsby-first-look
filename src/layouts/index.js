@@ -2,8 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
+import withRouter from 'react-router-dom/withRouter'
+import { CSSTransitionGroup } from 'react-transition-group'
 
 import './index.css'
+import './animation.css'
 
 const Header = () => (
   <div
@@ -27,14 +30,25 @@ const Header = () => (
             textDecoration: 'none',
           }}
         >
-          Gatsby
+          GatsbyH
         </Link>
       </h1>
     </div>
   </div>
 )
 
-const TemplateWrapper = ({ children }) => (
+class TransitionHandler extends React.Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.props.location.pathname === window.location.pathname
+  }
+
+  render() {
+    const { children } = this.props
+    return <div className="transition-container">{children}</div>
+  }
+}
+
+const TemplateWrapper = ({ children, location }) => (
   <div>
     <Helmet
       title="Gatsby Default Starter"
@@ -44,16 +58,18 @@ const TemplateWrapper = ({ children }) => (
       ]}
     />
     <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
+
+        <div
+          style={{
+            margin: '0 auto',
+            maxWidth: 960,
+            padding: '0px 1.0875rem 1.45rem',
+            paddingTop: 0,
+          }}
+        >
+          {children()}
+        </div>
+
   </div>
 )
 
@@ -61,4 +77,4 @@ TemplateWrapper.propTypes = {
   children: PropTypes.func,
 }
 
-export default TemplateWrapper
+export default withRouter(TemplateWrapper)

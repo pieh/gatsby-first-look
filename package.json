@@ -7,8 +7,12 @@
     "gatsby": "^1.9.17",
     "gatsby-link": "^1.6.15",
     "gatsby-plugin-react-helmet": "^1.0.5",
+    "gatsby-plugin-sharp": "^1.6.7",
+    "gatsby-remark-images": "^1.5.11",
     "gatsby-source-filesystem": "^1.4.12",
-    "gatsby-transformer-remark": "^1.7.7"
+    "gatsby-transformer-remark": "^1.7.7",
+    "gatsby-transformer-sharp": "^1.6.5",
+    "react-transition-group": "^2.2.0"
   },
   "keywords": [
     "gatsby"
@@ -18,7 +22,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write src/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

@@ -1,13 +1,11 @@
-import React from 'react';
-import Link from 'gatsby-link';
-import Helmet from 'react-helmet';
+import React from 'react'
+import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
 
 // import '../css/index.css'; // add some style if you want!
 
-export default function Index({
-  data
-}) {
-  const { edges: posts } = data.allMarkdownRemark;
+export default function Index({ data }) {
+  const { edges: posts } = data.allMarkdownRemark
   return (
     <div className="blog-posts">
       {posts
@@ -20,11 +18,14 @@ export default function Index({
               </h1>
               <h2>{post.frontmatter.date}</h2>
               <p>{post.excerpt}</p>
+              { post.frontmatter.thumb && post.frontmatter.thumb.childImageSharp && <div>
+                <img src={post.frontmatter.thumb.childImageSharp.responsiveSizes.src} />
+              </div> }
             </div>
-          );
+          )
         })}
     </div>
-  );
+  )
 }
 
 export const pageQuery = graphql`
@@ -43,4 +44,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

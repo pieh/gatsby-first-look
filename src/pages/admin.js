@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import Helmet from "react-helmet";
+import React, { Component } from 'react'
+import Helmet from 'react-helmet'
 
 class AdminPage extends Component {
   render() {
@@ -20,8 +20,8 @@ class AdminPage extends Component {
           <script src="https://unpkg.com/netlify-cms@~0.4/dist/cms.js" />
         </Helmet>
       </div>
-    );
+    )
   }
 }
 
-export default AdminPage;
+export default AdminPage

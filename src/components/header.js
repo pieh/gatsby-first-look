@@ -23,7 +23,7 @@ class Header extends Component {
                     to="/"
                     className={title}
                   >
-          Michał Piechowiak
+          Title
         </Link>
         {this.props.children}
         </div>

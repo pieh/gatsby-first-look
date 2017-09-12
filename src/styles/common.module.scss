@@ -1,0 +1,14 @@
+.container {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5em;
+}
+
+.title {
+  display: block;
+  font-size: 2em;
+  text-decoration: none;
+  // z-index: 50;
+  position: relative;
+}

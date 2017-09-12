@@ -19,6 +19,18 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             date
             path
             title
+            thumb {
+              id,
+              absolutePath
+              childImageSharp {
+                id
+                responsiveSizes {
+                  src
+                  srcSet
+                  sizes
+                }
+              }
+            }
           }
         }
       }

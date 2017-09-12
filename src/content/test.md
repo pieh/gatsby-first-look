@@ -1,9 +1,14 @@
 ---
 path: "/hello-world2"
 date: "2017-07-13T17:12:33.962Z"
-title: "My Second Gatsby Post"
+title: "Ble  My Second Gatsby Post"
+thumb: "a.jpg"
 ---
 
-That's second post, right?
+Ble That's second post, right?
 
-![](a.png)
+![](a.jpg)
+
+![](b.png)
+
+weird
